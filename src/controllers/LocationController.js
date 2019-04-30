@@ -5,7 +5,7 @@ import Location from '../models/Location';
  */
 class LocationController {
   /**
-     *@description Creates a new company
+     *@description Creates a new location
      *@param  {Object} req - Request sent to the router
      *@param  {object} res - Response sent from the controller
      *@returns {object} - status code, message and updated users details
@@ -27,7 +27,7 @@ class LocationController {
   }
 
   /**
-     *@description Creates a new company
+     *@description gets all location
      *@param  {Object} req - Request sent to the router
      *@param  {object} res - Response sent from the controller
      *@returns {object} - status code, message and updated users details
