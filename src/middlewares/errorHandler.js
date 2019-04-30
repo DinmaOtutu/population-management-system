@@ -1,10 +1,10 @@
 const errorValidationHandler = (req, res, next) => {
-  const error = req.errorValidations();
-  const errorValidations = [];
+  const error = req.validationErrors();
+  const validationErrors = [];
   if (error) {
-    error.map(err => errorValidations.push(err.msg));
+    error.map(err => validationErrors.push(err.msg));
     return res.status(400).json({
-      error: errorValidations
+      error: validationErrors
     });
   }
   next();
