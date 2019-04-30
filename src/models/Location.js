@@ -8,6 +8,10 @@ const LocationSchema = new Schema({
     unique: true,
     required: true,
   },
+  name: {
+    type: String,
+    required: true
+  },
   male: {
     type: Number,
     required: true,
