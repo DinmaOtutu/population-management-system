@@ -1,0 +1,19 @@
+{
+  "name": "population-management-system",
+  "version": "1.0.0",
+  "description": "This is a system that manages the population of states in Nigeria",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DinmaOtutu/population-management-system.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DinmaOtutu/population-management-system/issues"
+  },
+  "homepage": "https://github.com/DinmaOtutu/population-management-system#readme"
+}
