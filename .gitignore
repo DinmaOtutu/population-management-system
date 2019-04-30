@@ -2,7 +2,7 @@
 node_modules/
 
 # Log file
-eazy_tender.log
+population.log 
 
 # build output
 dist
