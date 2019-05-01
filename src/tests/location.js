@@ -8,6 +8,8 @@ chai.use(chaiHttp);
 
 env.config();
 
+let location;
+
 mongoose.Promise = global.Promise;
 
 // connect to data base and drop the database before running each test file
@@ -106,5 +108,27 @@ describe('Location Controller', () => {
           done();
         });
     });
+  });
+  
+  it('should update an existing location', (done) => {
+    const options = {
+      female: '22',
+      male: '4000',
+      name: '',
+      location: 'lokoja'
+    };
+    chai.request(App)
+      .get('/api/location')
+      .end((err, res) => {
+        location = res.body;
+        console.log(res.body, 'loooooooollllllllll')
+        chai.request(App)
+          .put(`/api/location/${location._id}`)
+          .send(JSON.stringify(options))
+          .end((err, res) => {
+            expect(res.status).to.equal(200);
+            done();
+          });
+      });
   });
 });
