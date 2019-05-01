@@ -81,7 +81,7 @@ class LocationController {
   }
 
   /**
-     *@description Creates a new location
+     *@description DELETE a location
      *@param  {Object} req - Request sent to the router
      *@param  {object} res - Response sent from the controller
      *@returns {object} - status code, message and updated users details

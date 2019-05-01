@@ -25,6 +25,8 @@ describe('Location Controller', () => {
       const options = {
         female: 10,
         male: 20,
+        name: 'chidinma',
+        location: 'Abuja'
       };
       chai
         .request(App)
