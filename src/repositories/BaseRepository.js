@@ -80,6 +80,21 @@ class BaseRepository {
       throw error;
     }
   }
+
+  /**
+   * @description delete document by id
+   * @param {object} Model
+   * @param {number} id Document id
+   * @returns {Document} Resolves to found document.
+   */
+  static async findByIdAndRemove(Model, id) {
+    try {
+      const document = await Model.findByIdAndRemove({ _id: id }).exec();
+      return document;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 export default BaseRepository;
