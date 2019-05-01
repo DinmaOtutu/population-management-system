@@ -79,6 +79,24 @@ class LocationController {
       return res.status(500).json({ error: error.message });
     }
   }
+
+  /**
+     *@description Creates a new location
+     *@param  {Object} req - Request sent to the router
+     *@param  {object} res - Response sent from the controller
+     *@returns {object} - status code, message and updated users details
+     *@memberof LocationController
+     */
+  static async deleteLocation(req, res) {
+    try {
+      const { id } = req.params;
+      const checkLocation = await BaseRepository.findByIdAndRemove(Location, id);
+      if (!checkLocation) return res.status(404).json({ error: 'This location does not exist' });
+      return res.status(200).json({ message: 'Successfully deleted a location' });
+    } catch (error) {
+      return res.status(500).json({ error: error.message });
+    }
+  }
 }
 
 export default LocationController;

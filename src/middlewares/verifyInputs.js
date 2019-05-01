@@ -17,6 +17,13 @@ const verifyUserInput = {
     req.check('id', 'Location ID is required').trim().notEmpty();
 
     errorValidationHandler(req, res, next);
+  },
+
+  deleteLocationRequestBody: (req, res, next) => {
+    req.check('id', 'Invalid location ID').isMongoId();
+    req.check('id', 'Location ID is required').trim().notEmpty();
+
+    errorValidationHandler(req, res, next);
   }
 };
 
