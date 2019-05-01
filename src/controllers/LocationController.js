@@ -37,13 +37,14 @@ class LocationController {
     try {
       const getLocation = await BaseRepository.findAll(Location);
       const locationSummary = getLocation.map((location) => {
+        const locationId = location._id;
         const malePopulation = location.male;
         const femalePopulation = location.female;
         const locationArea = location.location;
         const name = `Recorded by ${location.name}`;
         const totalPopulation = malePopulation + femalePopulation;
         return {
-          name, malePopulation, femalePopulation, totalPopulation, locationArea
+          locationId, name, malePopulation, femalePopulation, totalPopulation, locationArea
         };
       });
       return res.status(200).json({ message: 'Successfully created a location', locationSummary });

@@ -8,6 +8,8 @@ chai.use(chaiHttp);
 
 env.config();
 
+let location;
+
 mongoose.Promise = global.Promise;
 
 // connect to data base and drop the database before running each test file
@@ -89,6 +91,7 @@ describe('Location Controller', () => {
           'Content-type': 'application/json',
         })
         .end((err, res) => {
+          // console.log(res.body.locationSummary[0].locationId, '.............halllllllllaaaaaaaaaaaa')
           expect(res.status).to.equal(200);
           done();
         });
@@ -103,6 +106,67 @@ describe('Location Controller', () => {
         })
         .end((err, res) => {
           expect(res.status).to.equal(200);
+          done();
+        });
+    });
+
+    it('should update an existing location', (done) => {
+      const options = {
+        female: '22',
+        male: '4000',
+        name: '',
+        location: 'lokoja'
+      };
+      chai.request(App)
+        .get('/api/location')
+        .end((err, res) => {
+          location = res.body.locationSummary[0].locationId;
+          chai.request(App)
+            .put(`/api/location/${location}`)
+            .send(JSON.stringify(options))
+            .end((err, res) => {
+              expect(res.status).to.equal(200);
+              done();
+            });
+        });
+    });
+
+    it('should not update an unexisting location', (done) => {
+      const options = {
+        female: '22',
+        male: '4000',
+        name: '',
+        location: 'lokoja'
+      };
+      chai.request(App)
+        .put('/api/location/5cc8c9f64cbe77cb550efc0d')
+        .send(JSON.stringify(options))
+        .end((err, res) => {
+          expect(res.status).to.equal(404);
+          done();
+        });
+    });
+
+
+    it('should  delete  an existing location', (done) => {
+      chai.request(App)
+        .get('/api/location')
+        .end((err, res) => {
+          location = res.body.locationSummary[0].locationId;
+          chai.request(App)
+            .delete(`/api/location/${location}`)
+            .end((err, res) => {
+              expect(res.status).to.equal(200);
+              done();
+            });
+        });
+    });
+
+    it('should not delete unexisting location', (done) => {
+      chai.request(App)
+        .delete('/api/location//5cc8c9f64cbe77cb550efc0d')
+        .end((err, res) => {
+          expect(res.status).to.equal(404);
           done();
         });
     });
