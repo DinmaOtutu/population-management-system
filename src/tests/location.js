@@ -41,4 +41,23 @@ describe('Location Controller', () => {
         });
     });
   });
+
+  // it('should upate a new location', (done) => {
+  //   const options = {
+  //     female: 1000,
+  //     male: 20000,
+  //     name: 'chidinma Otutu',
+  //   };
+  //   chai
+  //     .request(App)
+  //     .put('/api/location/')
+  //     .set({
+  //       'Content-type': 'application/json',
+  //     })
+  //     .send(JSON.stringify(options))
+  //     .end((err, res) => {
+  //       expect(res.status).to.equal(201);
+  //       done();
+  //     });
+  // });
 });

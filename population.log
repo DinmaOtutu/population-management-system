@@ -1173,3 +1173,10 @@
 {"message":"Connected to database successfully","level":"info","label":"population-management","timestamp":"2019-05-01T10:30:38.047Z"}
 {"message":"App listening on localhost:6666","level":"info","label":"population-management","timestamp":"2019-05-01T10:31:34.692Z"}
 {"message":"Connected to database successfully","level":"info","label":"population-management","timestamp":"2019-05-01T10:31:34.731Z"}
+{"message":"App listening on localhost:6666","level":"info","label":"population-management","timestamp":"2019-05-01T10:35:56.922Z"}
+{"message":"Connected to database successfully","level":"info","label":"population-management","timestamp":"2019-05-01T10:35:56.957Z"}
+{"message":"App listening on localhost:6666","level":"info","label":"population-management","timestamp":"2019-05-01T10:36:10.163Z"}
+{"message":"Connected to database successfully","level":"info","label":"population-management","timestamp":"2019-05-01T10:36:10.200Z"}
+{"message":"App listening on localhost:6666","level":"info","label":"population-management","timestamp":"2019-05-01T10:36:53.793Z"}
+{"message":"Connected to database successfully","level":"info","label":"population-management","timestamp":"2019-05-01T10:36:53.843Z"}
+{"message":"Shutting down server...","level":"info","label":"population-management","timestamp":"2019-05-01T10:37:09.057Z"}
