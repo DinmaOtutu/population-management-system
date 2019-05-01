@@ -51,6 +51,34 @@ class LocationController {
       return res.status(500).json({ error: error.message });
     }
   }
+
+  /**
+     *@description Creates a new location
+     *@param  {Object} req - Request sent to the router
+     *@param  {object} res - Response sent from the controller
+     *@returns {object} - status code, message and updated users details
+     *@memberof LocationController
+     */
+  static async updateLocation(req, res) {
+    try {
+      const { id } = req.params;
+      const {
+        name, male, female, location
+      } = req.body;
+      const checkLocation = await BaseRepository.findById(Location, id);
+      if (!checkLocation) return res.status(404).json({ error: 'This location does not exist' });
+      const options = {
+        name: name || checkLocation.name,
+        male: male || checkLocation.male,
+        female: female || checkLocation.female,
+        location: location || checkLocation.location
+      };
+      const updateLocation = await BaseRepository.update(Location, { _id: id }, options);
+      return res.status(200).json({ message: 'Successfully updated a location', updateLocation });
+    } catch (error) {
+      return res.status(500).json({ error: error.message });
+    }
+  }
 }
 
 export default LocationController;
