@@ -1,7 +1,7 @@
-import mongoose, { Mongoose } from 'mongoose';
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import app from '../app';
-import logger from '../logger';
+import logger from '../utils.js/logger';
 
 dotenv.config();
 
