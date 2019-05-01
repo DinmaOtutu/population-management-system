@@ -43,13 +43,11 @@ The project structure follows the **MVC** (Model-View-Controller) pattern. You c
     ├── routers
         ├── index.js
         ├── location.js
-    ├── services
-        ├── LocationService.ts
     ├── tests
         ├── location.js
     ├── utils
         ├── logger.js
-    ├── app.ts
+    ├── app.js
 ├── README.md
 ```
 
